@@ -23,7 +23,7 @@ const Signup = () => {
   const [password, setPassword] = useState();
   const [pic, setPic] = useState();
   const [loading, setLoading] = useState(false);
-  // const { setUser } = ChatState();
+  const { setUser } = ChatState();
 
 
   const isValidEmail = (inputEmail) => { 
@@ -102,7 +102,7 @@ const Signup = () => {
         isClosable: true,
         position: "bottom",
       });
-      // setUser(data);
+      setUser(data);
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
       history.push("/chats")
