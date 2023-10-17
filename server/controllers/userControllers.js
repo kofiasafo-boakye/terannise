@@ -33,7 +33,7 @@ const registerUser = asyncHandler(async (req, res) => {
       email: user.email,
     //   isAdmin: user.isAdmin,
       pic: user.pic,
-    //   token: generateToken(user._id),
+      token: generateToken(user._id),
     });
   } else {
     res.status(400).json("Redistration Failed");
