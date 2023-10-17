@@ -276,8 +276,8 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 autoComplete="off"
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
-              {show ? "Hide" : "Show"}
+            <Button h="1.75rem" size="sm" >
+              Send
             </Button>
           </InputRightElement>
         </InputGroup>
