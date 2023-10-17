@@ -7,7 +7,6 @@ import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router";
 import { ChatState } from "../../Context/ChatProvider";
-import Login from "../components/Authentication/Login";
 
 
 const Signup = () => {
