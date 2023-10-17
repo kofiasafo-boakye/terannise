@@ -34,7 +34,8 @@ const MyChats = ({ fetchAgain }) => {
       const { data } = await axios.get("/api/chat", config);
       setChats(data);
       setLoading(false);
-      // console.log(data)
+      console.log("user:", user)
+      console.log("data:", data)
     } catch (error) {
       toast({
         title: "Error Occured!",
@@ -47,10 +48,6 @@ const MyChats = ({ fetchAgain }) => {
     }
   };
 
-    useEffect(() => {
-      setUser(JSON.parse(localStorage.getItem("userInfo")))
-      // eslint-disable-next-line
-    }, []);
 
   useEffect(() => {
     setLoggedUser(JSON.parse(localStorage.getItem("userInfo")));
