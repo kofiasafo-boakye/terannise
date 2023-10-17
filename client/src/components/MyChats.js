@@ -13,7 +13,7 @@ import { ChatState } from "../Context/ChatProvider";
 const MyChats = ({ fetchAgain }) => {
   const [loggedUser, setLoggedUser] = useState();
 
-  const { selectedChat, setSelectedChat, user, chats, setChats } = ChatState();
+  const { selectedChat, setSelectedChat, user, chats, setChats, setUser } = ChatState();
 
   const [loading, setLoading] = useState(false);
 
@@ -23,6 +23,7 @@ const MyChats = ({ fetchAgain }) => {
   const fetchChats = async () => {
     // // console.log(user._id);
     try {
+      console.log("user", user)
       setLoading(true);
       const config = {
         headers: {
@@ -31,8 +32,8 @@ const MyChats = ({ fetchAgain }) => {
       };
 
       const { data } = await axios.get("/api/chat", config);
-      setLoading(false);
       setChats(data);
+      setLoading(false);
       // console.log(data)
     } catch (error) {
       toast({
@@ -45,6 +46,11 @@ const MyChats = ({ fetchAgain }) => {
       });
     }
   };
+
+    useEffect(() => {
+      setUser(JSON.parse(localStorage.getItem("userInfo")))
+      // eslint-disable-next-line
+    }, []);
 
   useEffect(() => {
     setLoggedUser(JSON.parse(localStorage.getItem("userInfo")));

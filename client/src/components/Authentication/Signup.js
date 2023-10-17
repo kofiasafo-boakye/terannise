@@ -108,7 +108,7 @@ const Signup = () => {
       history.push("/chats")
     } catch (error) {
       toast({
-        title: `"Error!"`,
+        title: "Error!",
         description: error.response.data.message,
         status: "error",
         duration: 5000,
